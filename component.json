@@ -1,0 +1,580 @@
+{
+    "title": "Google+ Domains",
+    "description": "Builds on top of the Google+ platform for Google Apps Domains.",
+    "docsUrl": "https://developers.google.com/+/domains/",
+    "url": "https://api.apis.guru/v2/specs/googleapis.com/plusDomains/v1/swagger.json",
+    "envVars": {
+        "OAUTH_CLIENT_ID": {
+            "description": "OAuth Client ID"
+        },
+        "OAUTH_CLIENT_SECRET": {
+            "description": "OAuth Client Secret"
+        }
+    },
+    "credentials": {
+        "fields": {
+            "server": {
+                "label": "Server",
+                "viewClass": "SelectView",
+                "model": [
+                    "https://www.googleapis.com/plusDomains/v1",
+                    "--- Custom URL"
+                ],
+                "required": true
+            },
+            "otherServer": {
+                "label": "Custom Server URL",
+                "viewClass": "TextFieldView"
+            },
+            "Oauth2": {
+                "label": "Oauth 2.0 authentication",
+                "viewClass": "OAuthFieldView"
+            }
+        },
+        "oauth2": {
+            "client_id": "{{OAUTH_CLIENT_ID}}",
+            "client_secret": "{{OAUTH_CLIENT_SECRET}}",
+            "auth_uri": "https://accounts.google.com/o/oauth2/auth"
+        }
+    },
+    "triggers": {
+        "startFlow": {
+            "main": "./lib/triggers/startFlow.js",
+            "type": "polling",
+            "title": "Start Flow",
+            "fields": {}
+        }
+    },
+    "actions": {
+        "plusDomains_activities_get": {
+            "main": "./lib/actions/plusDomains_activities_get.js",
+            "title": "Get an activity.",
+            "description": "Get an activity.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/plusDomains_activities_get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "plusDomains_comments_list": {
+            "main": "./lib/actions/plusDomains_comments_list.js",
+            "title": "List all of the comments for an activity.",
+            "description": "List all of the comments for an activity.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/plusDomains_comments_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "plusDomains_comments_insert": {
+            "main": "./lib/actions/plusDomains_comments_insert.js",
+            "title": "Create a new comment in reply to an activity.",
+            "description": "Create a new comment in reply to an activity.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/plusDomains_comments_insert.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "plusDomains_people_listByActivity": {
+            "main": "./lib/actions/plusDomains_people_listByActivity.js",
+            "title": "List all of the people in the specified collection for a particular activity.",
+            "description": "List all of the people in the specified collection for a particular activity.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/plusDomains_people_listByActivity.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "plusDomains_circles_remove": {
+            "main": "./lib/actions/plusDomains_circles_remove.js",
+            "title": "Delete a circle.",
+            "description": "Delete a circle.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/plusDomains_circles_remove.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "plusDomains_circles_get": {
+            "main": "./lib/actions/plusDomains_circles_get.js",
+            "title": "Get a circle.",
+            "description": "Get a circle.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/plusDomains_circles_get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "plusDomains_circles_patch": {
+            "main": "./lib/actions/plusDomains_circles_patch.js",
+            "title": "Update a circle's description. This method supports patch semantics.",
+            "description": "Update a circle's description. This method supports patch semantics.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/plusDomains_circles_patch.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "plusDomains_circles_update": {
+            "main": "./lib/actions/plusDomains_circles_update.js",
+            "title": "Update a circle's description.",
+            "description": "Update a circle's description.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/plusDomains_circles_update.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "plusDomains_circles_removePeople": {
+            "main": "./lib/actions/plusDomains_circles_removePeople.js",
+            "title": "Remove a person from a circle.",
+            "description": "Remove a person from a circle.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/plusDomains_circles_removePeople.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "plusDomains_people_listByCircle": {
+            "main": "./lib/actions/plusDomains_people_listByCircle.js",
+            "title": "List all of the people who are members of a circle.",
+            "description": "List all of the people who are members of a circle.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/plusDomains_people_listByCircle.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "plusDomains_circles_addPeople": {
+            "main": "./lib/actions/plusDomains_circles_addPeople.js",
+            "title": "Add a person to a circle. Google+ limits certain circle operations, including the number of circle adds. Learn More.",
+            "description": "Add a person to a circle. Google+ limits certain circle operations, including the number of circle adds. Learn More.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/plusDomains_circles_addPeople.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "plusDomains_comments_get": {
+            "main": "./lib/actions/plusDomains_comments_get.js",
+            "title": "Get a comment.",
+            "description": "Get a comment.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/plusDomains_comments_get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "plusDomains_people_get": {
+            "main": "./lib/actions/plusDomains_people_get.js",
+            "title": "Get a person's profile.",
+            "description": "Get a person's profile.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/plusDomains_people_get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "plusDomains_activities_insert": {
+            "main": "./lib/actions/plusDomains_activities_insert.js",
+            "title": "Create a new activity for the authenticated user.",
+            "description": "Create a new activity for the authenticated user.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/plusDomains_activities_insert.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "plusDomains_activities_list": {
+            "main": "./lib/actions/plusDomains_activities_list.js",
+            "title": "List all of the activities in the specified collection for a particular user.",
+            "description": "List all of the activities in the specified collection for a particular user.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/plusDomains_activities_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "plusDomains_audiences_list": {
+            "main": "./lib/actions/plusDomains_audiences_list.js",
+            "title": "List all of the audiences to which a user can share.",
+            "description": "List all of the audiences to which a user can share.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/plusDomains_audiences_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "plusDomains_circles_list": {
+            "main": "./lib/actions/plusDomains_circles_list.js",
+            "title": "List all of the circles for a user.",
+            "description": "List all of the circles for a user.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/plusDomains_circles_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "plusDomains_circles_insert": {
+            "main": "./lib/actions/plusDomains_circles_insert.js",
+            "title": "Create a new circle for the authenticated user.",
+            "description": "Create a new circle for the authenticated user.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/plusDomains_circles_insert.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "plusDomains_media_insert": {
+            "main": "./lib/actions/plusDomains_media_insert.js",
+            "title": "Add a new media item to an album. The current upload size limitations are 36MB for a photo and 1GB for a video. Uploads do not count against quota if photos are less than 2048 pixels on their longest side or videos are less than 15 minutes in length.",
+            "description": "Add a new media item to an album. The current upload size limitations are 36MB for a photo and 1GB for a video. Uploads do not count against quota if photos are less than 2048 pixels on their longest side or videos are less than 15 minutes in length.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                },
+                "body_content_type": {
+                    "viewClass": "SelectView",
+                    "label": "Body Content-Type",
+                    "required": true,
+                    "prompt": "Choose a body Content-Type.",
+                    "model": {
+                        "image/aces": "image/aces",
+                        "image/apng": "image/apng",
+                        "image/avci": "image/avci",
+                        "image/avcs": "image/avcs",
+                        "image/bmp": "image/bmp",
+                        "image/cgm": "image/cgm",
+                        "image/dicom-rle": "image/dicom-rle",
+                        "image/emf": "image/emf",
+                        "image/fits": "image/fits",
+                        "image/g3fax": "image/g3fax",
+                        "image/gif": "image/gif",
+                        "image/heic": "image/heic",
+                        "image/heic-sequence": "image/heic-sequence",
+                        "image/heif": "image/heif",
+                        "image/heif-sequence": "image/heif-sequence",
+                        "image/ief": "image/ief",
+                        "image/jls": "image/jls",
+                        "image/jp2": "image/jp2",
+                        "image/jpeg": "image/jpeg",
+                        "image/jpm": "image/jpm",
+                        "image/jpx": "image/jpx",
+                        "image/ktx": "image/ktx",
+                        "image/naplps": "image/naplps",
+                        "image/pjpeg": "image/pjpeg",
+                        "image/png": "image/png",
+                        "image/prs.btif": "image/prs.btif",
+                        "image/prs.pti": "image/prs.pti",
+                        "image/pwg-raster": "image/pwg-raster",
+                        "image/sgi": "image/sgi",
+                        "image/svg+xml": "image/svg+xml",
+                        "image/t38": "image/t38",
+                        "image/tiff": "image/tiff",
+                        "image/tiff-fx": "image/tiff-fx",
+                        "image/vnd.adobe.photoshop": "image/vnd.adobe.photoshop",
+                        "image/vnd.airzip.accelerator.azv": "image/vnd.airzip.accelerator.azv",
+                        "image/vnd.cns.inf2": "image/vnd.cns.inf2",
+                        "image/vnd.dece.graphic": "image/vnd.dece.graphic",
+                        "image/vnd.djvu": "image/vnd.djvu",
+                        "image/vnd.dvb.subtitle": "image/vnd.dvb.subtitle",
+                        "image/vnd.dwg": "image/vnd.dwg",
+                        "image/vnd.dxf": "image/vnd.dxf",
+                        "image/vnd.fastbidsheet": "image/vnd.fastbidsheet",
+                        "image/vnd.fpx": "image/vnd.fpx",
+                        "image/vnd.fst": "image/vnd.fst",
+                        "image/vnd.fujixerox.edmics-mmr": "image/vnd.fujixerox.edmics-mmr",
+                        "image/vnd.fujixerox.edmics-rlc": "image/vnd.fujixerox.edmics-rlc",
+                        "image/vnd.globalgraphics.pgb": "image/vnd.globalgraphics.pgb",
+                        "image/vnd.microsoft.icon": "image/vnd.microsoft.icon",
+                        "image/vnd.mix": "image/vnd.mix",
+                        "image/vnd.mozilla.apng": "image/vnd.mozilla.apng",
+                        "image/vnd.ms-modi": "image/vnd.ms-modi",
+                        "image/vnd.ms-photo": "image/vnd.ms-photo",
+                        "image/vnd.net-fpx": "image/vnd.net-fpx",
+                        "image/vnd.radiance": "image/vnd.radiance",
+                        "image/vnd.sealed.png": "image/vnd.sealed.png",
+                        "image/vnd.sealedmedia.softseal.gif": "image/vnd.sealedmedia.softseal.gif",
+                        "image/vnd.sealedmedia.softseal.jpg": "image/vnd.sealedmedia.softseal.jpg",
+                        "image/vnd.svf": "image/vnd.svf",
+                        "image/vnd.tencent.tap": "image/vnd.tencent.tap",
+                        "image/vnd.valve.source.texture": "image/vnd.valve.source.texture",
+                        "image/vnd.wap.wbmp": "image/vnd.wap.wbmp",
+                        "image/vnd.xiff": "image/vnd.xiff",
+                        "image/vnd.zbrush.pcx": "image/vnd.zbrush.pcx",
+                        "image/webp": "image/webp",
+                        "image/wmf": "image/wmf",
+                        "image/x-3ds": "image/x-3ds",
+                        "image/x-cmu-raster": "image/x-cmu-raster",
+                        "image/x-cmx": "image/x-cmx",
+                        "image/x-freehand": "image/x-freehand",
+                        "image/x-icon": "image/x-icon",
+                        "image/x-jng": "image/x-jng",
+                        "image/x-mrsid-image": "image/x-mrsid-image",
+                        "image/x-ms-bmp": "image/x-ms-bmp",
+                        "image/x-pcx": "image/x-pcx",
+                        "image/x-pict": "image/x-pict",
+                        "image/x-portable-anymap": "image/x-portable-anymap",
+                        "image/x-portable-bitmap": "image/x-portable-bitmap",
+                        "image/x-portable-graymap": "image/x-portable-graymap",
+                        "image/x-portable-pixmap": "image/x-portable-pixmap",
+                        "image/x-rgb": "image/x-rgb",
+                        "image/x-tga": "image/x-tga",
+                        "image/x-xbitmap": "image/x-xbitmap",
+                        "image/x-xcf": "image/x-xcf",
+                        "image/x-xpixmap": "image/x-xpixmap",
+                        "image/x-xwindowdump": "image/x-xwindowdump",
+                        "video/1d-interleaved-parityfec": "video/1d-interleaved-parityfec",
+                        "video/3gpp": "video/3gpp",
+                        "video/3gpp-tt": "video/3gpp-tt",
+                        "video/3gpp2": "video/3gpp2",
+                        "video/bmpeg": "video/bmpeg",
+                        "video/bt656": "video/bt656",
+                        "video/celb": "video/celb",
+                        "video/dv": "video/dv",
+                        "video/encaprtp": "video/encaprtp",
+                        "video/h261": "video/h261",
+                        "video/h263": "video/h263",
+                        "video/h263-1998": "video/h263-1998",
+                        "video/h263-2000": "video/h263-2000",
+                        "video/h264": "video/h264",
+                        "video/h264-rcdo": "video/h264-rcdo",
+                        "video/h264-svc": "video/h264-svc",
+                        "video/h265": "video/h265",
+                        "video/iso.segment": "video/iso.segment",
+                        "video/jpeg": "video/jpeg",
+                        "video/jpeg2000": "video/jpeg2000",
+                        "video/jpm": "video/jpm",
+                        "video/mj2": "video/mj2",
+                        "video/mp1s": "video/mp1s",
+                        "video/mp2p": "video/mp2p",
+                        "video/mp2t": "video/mp2t",
+                        "video/mp4": "video/mp4",
+                        "video/mp4v-es": "video/mp4v-es",
+                        "video/mpeg": "video/mpeg",
+                        "video/mpeg4-generic": "video/mpeg4-generic",
+                        "video/mpv": "video/mpv",
+                        "video/nv": "video/nv",
+                        "video/ogg": "video/ogg",
+                        "video/parityfec": "video/parityfec",
+                        "video/pointer": "video/pointer",
+                        "video/quicktime": "video/quicktime",
+                        "video/raptorfec": "video/raptorfec",
+                        "video/raw": "video/raw",
+                        "video/rtp-enc-aescm128": "video/rtp-enc-aescm128",
+                        "video/rtploopback": "video/rtploopback",
+                        "video/rtx": "video/rtx",
+                        "video/smpte291": "video/smpte291",
+                        "video/smpte292m": "video/smpte292m",
+                        "video/ulpfec": "video/ulpfec",
+                        "video/vc1": "video/vc1",
+                        "video/vc2": "video/vc2",
+                        "video/vnd.cctv": "video/vnd.cctv",
+                        "video/vnd.dece.hd": "video/vnd.dece.hd",
+                        "video/vnd.dece.mobile": "video/vnd.dece.mobile",
+                        "video/vnd.dece.mp4": "video/vnd.dece.mp4",
+                        "video/vnd.dece.pd": "video/vnd.dece.pd",
+                        "video/vnd.dece.sd": "video/vnd.dece.sd",
+                        "video/vnd.dece.video": "video/vnd.dece.video",
+                        "video/vnd.directv.mpeg": "video/vnd.directv.mpeg",
+                        "video/vnd.directv.mpeg-tts": "video/vnd.directv.mpeg-tts",
+                        "video/vnd.dlna.mpeg-tts": "video/vnd.dlna.mpeg-tts",
+                        "video/vnd.dvb.file": "video/vnd.dvb.file",
+                        "video/vnd.fvt": "video/vnd.fvt",
+                        "video/vnd.hns.video": "video/vnd.hns.video",
+                        "video/vnd.iptvforum.1dparityfec-1010": "video/vnd.iptvforum.1dparityfec-1010",
+                        "video/vnd.iptvforum.1dparityfec-2005": "video/vnd.iptvforum.1dparityfec-2005",
+                        "video/vnd.iptvforum.2dparityfec-1010": "video/vnd.iptvforum.2dparityfec-1010",
+                        "video/vnd.iptvforum.2dparityfec-2005": "video/vnd.iptvforum.2dparityfec-2005",
+                        "video/vnd.iptvforum.ttsavc": "video/vnd.iptvforum.ttsavc",
+                        "video/vnd.iptvforum.ttsmpeg2": "video/vnd.iptvforum.ttsmpeg2",
+                        "video/vnd.motorola.video": "video/vnd.motorola.video",
+                        "video/vnd.motorola.videop": "video/vnd.motorola.videop",
+                        "video/vnd.mpegurl": "video/vnd.mpegurl",
+                        "video/vnd.ms-playready.media.pyv": "video/vnd.ms-playready.media.pyv",
+                        "video/vnd.nokia.interleaved-multimedia": "video/vnd.nokia.interleaved-multimedia",
+                        "video/vnd.nokia.mp4vr": "video/vnd.nokia.mp4vr",
+                        "video/vnd.nokia.videovoip": "video/vnd.nokia.videovoip",
+                        "video/vnd.objectvideo": "video/vnd.objectvideo",
+                        "video/vnd.radgamettools.bink": "video/vnd.radgamettools.bink",
+                        "video/vnd.radgamettools.smacker": "video/vnd.radgamettools.smacker",
+                        "video/vnd.sealed.mpeg1": "video/vnd.sealed.mpeg1",
+                        "video/vnd.sealed.mpeg4": "video/vnd.sealed.mpeg4",
+                        "video/vnd.sealed.swf": "video/vnd.sealed.swf",
+                        "video/vnd.sealedmedia.softseal.mov": "video/vnd.sealedmedia.softseal.mov",
+                        "video/vnd.uvvu.mp4": "video/vnd.uvvu.mp4",
+                        "video/vnd.vivo": "video/vnd.vivo",
+                        "video/vp8": "video/vp8",
+                        "video/webm": "video/webm",
+                        "video/x-f4v": "video/x-f4v",
+                        "video/x-fli": "video/x-fli",
+                        "video/x-flv": "video/x-flv",
+                        "video/x-m4v": "video/x-m4v",
+                        "video/x-matroska": "video/x-matroska",
+                        "video/x-mng": "video/x-mng",
+                        "video/x-ms-asf": "video/x-ms-asf",
+                        "video/x-ms-vob": "video/x-ms-vob",
+                        "video/x-ms-wm": "video/x-ms-wm",
+                        "video/x-ms-wmv": "video/x-ms-wmv",
+                        "video/x-ms-wmx": "video/x-ms-wmx",
+                        "video/x-ms-wvx": "video/x-ms-wvx",
+                        "video/x-msvideo": "video/x-msvideo",
+                        "video/x-sgi-movie": "video/x-sgi-movie",
+                        "video/x-smv": "video/x-smv"
+                    }
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/plusDomains_media_insert.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "plusDomains_people_list": {
+            "main": "./lib/actions/plusDomains_people_list.js",
+            "title": "List all of the people in the specified collection.",
+            "description": "List all of the people in the specified collection.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/plusDomains_people_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        }
+    }
+}

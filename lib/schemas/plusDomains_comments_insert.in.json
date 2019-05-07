@@ -1,0 +1,166 @@
+{
+    "type": "object",
+    "properties": {
+        "activityId": {
+            "required": true,
+            "type": "string"
+        },
+        "fields": {
+            "type": "string"
+        },
+        "key": {
+            "type": "string"
+        },
+        "oauth_token": {
+            "type": "string"
+        },
+        "prettyPrint": {
+            "type": "boolean",
+            "default": true
+        },
+        "quotaUser": {
+            "type": "string"
+        },
+        "userIp": {
+            "type": "string"
+        },
+        "requestBody": {
+            "properties": {
+                "actor": {
+                    "description": "The person who posted this comment.",
+                    "properties": {
+                        "clientSpecificActorInfo": {
+                            "description": "Actor info specific to particular clients.",
+                            "properties": {
+                                "youtubeActorInfo": {
+                                    "description": "Actor info specific to YouTube clients.",
+                                    "properties": {
+                                        "channelId": {
+                                            "description": "ID of the YouTube channel owned by the Actor.",
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "displayName": {
+                            "description": "The name of this actor, suitable for display.",
+                            "type": "string"
+                        },
+                        "id": {
+                            "description": "The ID of the actor.",
+                            "type": "string"
+                        },
+                        "image": {
+                            "description": "The image representation of this actor.",
+                            "properties": {
+                                "url": {
+                                    "description": "The URL of the actor's profile photo. To resize the image and crop it to a square, append the query string ?sz=x, where x is the dimension in pixels of each side.",
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "url": {
+                            "description": "A link to the Person resource for this actor.",
+                            "type": "string"
+                        },
+                        "verification": {
+                            "description": "Verification status of actor.",
+                            "properties": {
+                                "adHocVerified": {
+                                    "description": "Verification for one-time or manual processes.",
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    },
+                    "type": "object"
+                },
+                "etag": {
+                    "description": "ETag of this response for caching purposes.",
+                    "type": "string"
+                },
+                "id": {
+                    "description": "The ID of this comment.",
+                    "type": "string"
+                },
+                "inReplyTo": {
+                    "description": "The activity this comment replied to.",
+                    "items": {
+                        "properties": {
+                            "id": {
+                                "description": "The ID of the activity.",
+                                "type": "string"
+                            },
+                            "url": {
+                                "description": "The URL of the activity.",
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "kind": {
+                    "default": "plus#comment",
+                    "description": "Identifies this resource as a comment. Value: \"plus#comment\".",
+                    "type": "string"
+                },
+                "object": {
+                    "description": "The object of this comment.",
+                    "properties": {
+                        "content": {
+                            "description": "The HTML-formatted content, suitable for display.",
+                            "type": "string"
+                        },
+                        "objectType": {
+                            "default": "comment",
+                            "description": "The object type of this comment. Possible values are:  \n- \"comment\" - A comment in reply to an activity.",
+                            "type": "string"
+                        },
+                        "originalContent": {
+                            "description": "The content (text) as provided by the author, stored without any HTML formatting. When creating or updating a comment, this value must be supplied as plain text in the request.",
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                },
+                "plusoners": {
+                    "description": "People who +1'd this comment.",
+                    "properties": {
+                        "totalItems": {
+                            "description": "Total number of people who +1'd this comment.",
+                            "format": "uint32",
+                            "type": "integer"
+                        }
+                    },
+                    "type": "object"
+                },
+                "published": {
+                    "description": "The time at which this comment was initially published. Formatted as an RFC 3339 timestamp.",
+                    "format": "date-time",
+                    "type": "string"
+                },
+                "selfLink": {
+                    "description": "Link to this comment resource.",
+                    "type": "string"
+                },
+                "updated": {
+                    "description": "The time at which this comment was last updated. Formatted as an RFC 3339 timestamp.",
+                    "format": "date-time",
+                    "type": "string"
+                },
+                "verb": {
+                    "default": "post",
+                    "description": "This comment's verb, indicating what action was performed. Possible values are:  \n- \"post\" - Publish content to the stream.",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        }
+    }
+}
