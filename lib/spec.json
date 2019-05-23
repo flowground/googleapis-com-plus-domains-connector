@@ -34906,7 +34906,7 @@
                 "description": "Oauth 2.0 authentication",
                 "type": "oauth2",
                 "flows": {
-                    "implicit": {
+                    "authorizationCode": {
                         "authorizationUrl": "https://accounts.google.com/o/oauth2/auth",
                         "scopes": {
                             "https://www.googleapis.com/auth/plus.circles.read": "View your circles and the people and pages in them",
@@ -34919,7 +34919,8 @@
                             "https://www.googleapis.com/auth/plus.stream.write": "Manage your Google+ posts, comments, and stream",
                             "https://www.googleapis.com/auth/userinfo.email": "View your email address",
                             "https://www.googleapis.com/auth/userinfo.profile": "See your personal info, including any personal info you've made publically available"
-                        }
+                        },
+                        "tokenUrl": "https://www.googleapis.com/oauth2/v4/token"
                     }
                 }
             }
